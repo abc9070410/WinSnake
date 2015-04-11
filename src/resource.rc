@@ -1,0 +1,50 @@
+#include <windows.h>
+#include "resource.h"
+
+
+ID_ICON_1	ICON  "icon1.ico"
+//ID_ICON_2	ICON  "icon2.ico"
+//ID_ICON_3	ICON  "icon3.ico"
+
+
+
+//menu區塊
+ID_MENU MENU 
+BEGIN 
+  POPUP "設置" 
+    BEGIN	
+	  POPUP "遊戲等級"
+	    BEGIN
+		  MENUITEM "低能",IDM_LEVEL_1
+		  MENUITEM "普通",IDM_LEVEL_2
+		  MENUITEM "上等",IDM_LEVEL_3
+		  MENUITEM "地獄",IDM_LEVEL_4
+	  END
+      POPUP "視窗大小"
+        BEGIN
+          MENUITEM "小",IDM_SIZE_1
+		  MENUITEM "中",IDM_SIZE_2
+		  MENUITEM "大",IDM_SIZE_3
+		END  
+      MENUITEM "背景更換",IDM_CHANGE
+    END 
+  POPUP "關於" 
+    BEGIN
+      MENUITEM "遊戲",IDM_GAME_ABOUT
+      MENUITEM "作者",IDM_DESIGNER_ABOUT
+    END 
+  MENUITEM "結束",IDM_CLOSE
+END 
+
+//對話方塊區塊ABOUT
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 250, 120
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Box"
+FONT 9, "新細明體"
+BEGIN
+    DEFPUSHBUTTON   "IDD_OK",IDD_OK,190,18,50,14
+    PUSHBUTTON      "IDD_CANCEL",IDD_CANCEL,190,35,50,14
+    GROUPBOX        "IDD_STATIC",IDD_STATIC,7,7,180,80
+    CTEXT           "IDD_CTEXT",IDD_CTEXT,16,18,150,60
+END
+
